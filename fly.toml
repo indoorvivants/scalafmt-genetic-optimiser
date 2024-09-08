@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for scalafmt-genetic-optimiser on 2024-09-13T11:36:07+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'scalafmt-genetic-optimiser'
+primary_region = 'lhr'
+
+[build]
+
+[[services]]
+  internal_port = 9999
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
