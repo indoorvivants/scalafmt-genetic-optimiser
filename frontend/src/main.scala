@@ -239,7 +239,7 @@ case class JobAttributes(
           ),
           a(
             basicLink,
-            href := "https://blog.indoorvivants.com/2024-09-30-scalafmt-genetic-optimiser",
+            href := "https://blog.indoorvivants.com/2024-09-27-scalafmt-genetic-optimiser",
             "Blog post about this"
           )
         )
