@@ -155,10 +155,12 @@ case class JobAttributes(
           input(
             tpe := "text",
             cls := "p-2 border-2 border-grey-600 rounded-md",
-            value <-- populationSize.signal.map(_.toString),
-            onInput.mapToValue --> populationSize.writer
-              .filter(_ > 0)
-              .contramap[String](_.toInt)
+            controlled(
+              value <-- populationSize.signal.map(_.toString),
+              onInput.mapToValue --> populationSize.writer
+                .filter(_ > 0)
+                .contramap[String](_.toInt)
+            )
           )
         ),
         p(
@@ -168,10 +170,12 @@ case class JobAttributes(
             tpe         := "text",
             placeholder := "8008",
             cls         := "p-2 border-2 border-grey-600 rounded-md",
-            value <-- seed.signal.map(_.toString),
-            onInput.mapToValue --> seed.writer
-              .filter(_ > 0)
-              .contramap[String](_.toLong)
+            controlled(
+              value <-- seed.signal.map(_.toString),
+              onInput.mapToValue --> seed.writer
+                .filter(_ > 0)
+                .contramap[String](_.toLong)
+            )
           )
         ),
         div(
