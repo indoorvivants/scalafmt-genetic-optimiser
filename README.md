@@ -2,7 +2,7 @@
 
 [**Live demo**](https://scalafmt-genetic-optimiser.fly.dev/)
 
-This is an accompanying repo to my [blog post](https://blog.indoorvivants.com/2024-09-30-scalafmt-genetic-optimiser). 
+This is an accompanying repo to my [blog post](https://blog.indoorvivants.com/2024-09-27-scalafmt-genetic-optimiser). 
 
 The genetic algorithms implementation is in a separate library called [Genovese](https://github.com/indoorvivants/genovese).
 
