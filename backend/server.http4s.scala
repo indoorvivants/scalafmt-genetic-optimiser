@@ -37,7 +37,10 @@ object OptimizerServer extends IOApp.Simple:
             handleErrors(scribe.cats.io, routes(wbs).orNotFound)
           )
           .build
-      .useForever
+      .use: server =>
+        IO.println(s"Server running at ${server.baseUri}") *> 
+        IO.never
+
 
   def handleErrors(logger: Scribe[IO], routes: HttpApp[IO]): HttpApp[IO] =
     import cats.syntax.all.*
