@@ -7,7 +7,7 @@ RUN wget https://raw.githubusercontent.com/VirtusLab/scala-cli/main/scala-cli.sh
     chmod +x scala-cli && \
     scala-cli config power true && \
     scala-cli version && \
-    echo '@main def hello = println(42)' | scala-cli run _ --js -S 3.5.1
+    echo '@main def hello = println(42)' | scala-cli run _ --js -S 3.7 --server=false
 
 WORKDIR /scratch
 
@@ -41,7 +41,7 @@ RUN rm -rf backend/.scala-build backend/.bsp backend/.bloop
 WORKDIR /source/backend
 RUN scala-cli package . --assembly -f -o ./optimizer-backend --offline --server=false
 
-FROM ghcr.io/graalvm/jdk-community:23
+FROM ghcr.io/graalvm/jdk-community:24
 
 COPY --from=build /source/backend/optimizer-backend /app/optimizer-backend
 

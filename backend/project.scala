@@ -1,5 +1,5 @@
 // Main
-//> using scala "3.5.1"
+//> using scala 3.7.3
 
 //> using dependency "com.github.vickumar1981:stringdistance_2.13:1.2.7"
 //> using dependency "com.indoorvivants::genovese::0.0.3"

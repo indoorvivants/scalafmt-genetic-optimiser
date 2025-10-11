@@ -1,4 +1,4 @@
-//> using scala "3.5.0"
+//> using scala 3.7.3
 
 //> using dependency "com.lihaoyi::upickle::4.0.1"
 
